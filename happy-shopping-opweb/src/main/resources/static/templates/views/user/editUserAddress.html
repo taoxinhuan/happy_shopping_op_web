@@ -1,0 +1,77 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-hidden="true" ng-click="cancel()">×</button>
+	<h4 class="modal-title" ng-bind="title"></h4>
+</div>
+<div class="modal-body">
+	<div class="portlet light">
+		<div class="portlet-body form">
+			<form action="" class="form-horizontal" name="Form">
+				<div class="row">
+					<div class="form-group">
+					<label class="col-md-3 control-label"> 省：<span class="required">* </span></label>
+					<div class="col-md-7">
+						<input type="text" class="form-control" placeholder="省" ng-model="vo.province" name="province" required />
+						<p class="help-block" ng-show="Form.province.$touched"
+							ng-messages="Form.province.$error" ng-messages-multiple>
+							<span class="error-messages ng-scope ng-active" ng-message="required">省不能为空！</span>
+						</p>
+					</div>
+				</div>
+				</div>	
+				<div class="row">
+					<div class="form-group">
+					<label class="col-md-3 control-label"> 市：<span class="required">* </span></label>
+					<div class="col-md-7">
+						<input type="text" class="form-control" placeholder="市" ng-model="vo.city" name="city" required />
+						<p class="help-block" ng-show="Form.city.$touched"
+							ng-messages="Form.city.$error" ng-messages-multiple>
+							<span class="error-messages ng-scope ng-active" ng-message="required">市不能为空！</span>
+						</p>
+					</div>
+				</div>
+				</div>	
+				<div class="row">
+					<div class="form-group">
+					<label class="col-md-3 control-label"> 区：<span class="required">* </span></label>
+					<div class="col-md-7">
+						<input type="text" class="form-control" placeholder="请输入菜单名" ng-model="vo.county" name="county" required />
+						<p class="help-block" ng-show="Form.county.$touched"
+							ng-messages="Form.county.$error" ng-messages-multiple>
+							<span class="error-messages ng-scope ng-active" ng-message="required">菜单名不能为空！</span>
+						</p>
+					</div>
+				</div>
+				</div>	
+				<div class="row">
+					<div class="form-group">
+					<label class="col-md-3 control-label"> 街道：<span class="required">* </span></label>
+					<div class="col-md-7">
+						<input type="text" class="form-control" placeholder="请输入菜单名" ng-model="vo.street" name="street" required />
+						<p class="help-block" ng-show="Form.street.$touched"
+							ng-messages="Form.street.$error" ng-messages-multiple>
+							<span class="error-messages ng-scope ng-active" ng-message="required">菜单名不能为空！</span>
+						</p>
+					</div>
+				</div>
+				</div>	
+				<div class="row">
+					<div class="form-group">
+					<label class="col-md-3 control-label"> 详细地址：<span class="required">* </span></label>
+					<div class="col-md-7">
+						<input type="text" class="form-control" placeholder="请输入菜单名" ng-model="vo.address" name="address" required />
+						<p class="help-block" ng-show="Form.address.$touched"
+							ng-messages="Form.address.$error" ng-messages-multiple>
+							<span class="error-messages ng-scope ng-active" ng-message="required">菜单名不能为空！</span>
+						</p>
+					</div>
+				</div>
+				</div>	
+			</form>
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="ok()" ng-disabled="Form.$invalid">确定</button>
+	<button class="btn default" type="button" ng-click="cancel()">取消</button>
+</div>

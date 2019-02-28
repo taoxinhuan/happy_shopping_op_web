@@ -1,0 +1,83 @@
+<div data-page-content>
+	<div data-page-search>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="col-md-3 control-label">姓名：</label>
+				<div class="col-md-8">
+					<input type="text" ng-model="vo.name" class="form-control">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="col-md-3 control-label">手机号：</label>
+				<div class="col-md-8">
+					<input type="text" ng-model="vo.account" class="form-control">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="table-scrollable">
+				<table class="table table-striped table-bordered table-hover"
+					id="datatable_ajax">
+					<thead>
+						<tr class="heading">
+							<th>序号</th>
+							<th>姓名</th>
+							<th>手机号</th>
+							<th>角色</th>
+							<th>状态</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in vm.items" class="odd gradeX">
+							<td ng-bind="$index+1+((vm.pages.index-1)*vm.pages.itemsPerPage)"></td>
+							<td ng-bind="item.trueName"></td>
+							<td ng-bind="item.mobileNo"></td>
+							<td >
+								<span ng-repeat="typeItem in roleList" 
+                   					ng-if="typeItem.itemCode==item.role">{{typeItem.itemName}}</span>
+							</td>
+							<td>
+								<span ng-repeat="stateItem in shopAccountStateList" 
+		                   			class="label label-sm label-{{stateItem.stateColor}}"
+		                   			ng-if="stateItem.state==item.state">{{stateItem.stateName}}</span>
+							</td>
+							<td>
+							   <button ng-click="resetPassword(item.id)" class="btn btn-xs default btn-editable">
+			                    	<i class="fa fa-key"></i> 重置密码 </button>
+			                   <span ng-if="mobile != item.mobileNo">
+			                   		<button ng-click="editAdmin(item.id)" class="btn btn-xs default btn-editable">
+				                    	<i class="fa fa-edit"></i> 编辑 </button>
+								   <button ng-click="startAccount(item.id)" class="btn btn-xs default btn-editable" ng-if="item.state==1">
+				                    	<i class="fa fa-unlock"></i> 启用 </button> 
+				                   <button ng-click="freezeAccount(item.id)" class="btn btn-xs default btn-editable" ng-if="item.state==0">
+				                    	<i class="fa fa-lock"></i> 停用</button> 
+			                   </span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<pagination boundary-links="true"
+					items-per-page="vm.pages.itemsPerPage"
+					total-items="vm.pages.totalResult" ng-model="vm.pages.index"
+					class="pagination-sm pull-right" previous-text="&lsaquo;"
+					next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+					ng-change="getShopAccountList()"></pagination>
+				<h5>每页 {{vm.pages.itemsPerPage}}条 | 共 {{vm.pages.totalResult}}
+					条记录 | 当前第 {{vm.pages.index}} 页 | 共 {{vm.pages.totalPage}} 页</h5>
+		</div>
+	</div>
+</div>
+<div class="form-actions">
+	<div class="row">
+		<div class="col-md-offset-5 col-md-4">
+			<a href="#/shopList.html" class="btn default">
+				<i class="fa fa-chevron-circle-left"></i>返回</a>
+		</div>
+	</div>
+</div>

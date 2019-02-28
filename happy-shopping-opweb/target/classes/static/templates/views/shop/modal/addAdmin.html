@@ -1,0 +1,55 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-hidden="true" ng-click="cancel()">×</button>
+	<h4 class="modal-title" ng-bind="title"></h4>
+</div>
+<div class="modal-body">
+	<div class="portlet light">
+		<div class="portlet-body form">
+			<form action="" class="form-horizontal" name="addForm">
+				<div class="row">
+					<div class="form-group">
+						<label class="col-md-3  col-md-offset-1 control-label">管理员姓名：<span class="required">*</span></label>
+						<div class="col-md-6">
+							<input type="text" class="form-control" name="trueName" ng-model="modalVO.trueName" required>
+						    <div class="error-messages ng-scope ng-active" data-ng-messages="addForm.trueName.$error" data-ng-if="addForm.trueName.$touched">
+							   <div class="ng-scope" data-ng-message="required">管理员姓名必填！</div>
+						    </div>
+						</div>
+					</div>
+				</div>	
+				<div class="row">
+					<div class="form-group">
+						<label class="col-md-3 col-md-offset-1 control-label">手机号：<span class="required">*</span></label>
+						<div class="col-md-6">
+							<input type="number" class="form-control"  name="moblieNo" ng-model="modalVO.mobileNo"  required
+							ng-pattern="/^1[34578]\d{9}$/"/>
+						    <div class="error-messages ng-scope ng-active" data-ng-messages="addForm.moblieNo.$error" data-ng-if="addForm.moblieNo.$touched">
+							  <div class="ng-scope" data-ng-message="required">手机号必填！</div>
+							  <div class="ng-scope" data-ng-message="pattern">手机号格式不正确！</div>
+						   </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-md-3  col-md-offset-1 control-label">角色：<span class="required">*</span></label>
+						<div class="col-md-6">
+							<select class="form-control" name="role" ng-options="optionItem.itemCode as optionItem.itemName for optionItem in roleList" 
+								ng-model="modalVO.role" required>
+								<option value=""> 请选择 </option>	
+							</select>
+						    <div class="error-messages ng-scope ng-active" data-ng-messages="addForm.role.$error" data-ng-if="addForm.role.$touched">
+							   <div class="ng-scope" data-ng-message="required">角色必填！</div>
+						    </div>
+						</div>
+					</div>
+				</div>	
+			</form>
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="ok()" ng-disabled="addForm.$invalid">确定</button>
+	<button class="btn default" type="button" ng-click="cancel()">取消</button>
+</div>

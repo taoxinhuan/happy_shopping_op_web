@@ -1,0 +1,86 @@
+<div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="portlet light bordered">
+				<div class="portlet-title">
+					<div class="caption font-green-sharp">
+						<i class="icon-equalizer font-green-sharp"></i> <span
+							class="caption-subject bold uppercase">平台用户信息</span>
+					</div>
+				</div>
+				<div class="portlet-body form">
+					<!-- BEGIN FORM-->
+					<form name="Form" class="form-horizontal" novalidate="novalidate">
+						<div class="form-body">
+						   <div class="form-group">
+								<label class="col-md-3 control-label">用户名：&nbsp;&nbsp;&nbsp;
+								</label>
+								<div class="col-md-4">
+									<span class="form-control-static" data-ng-bind="userMessage.userName"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label">真实姓名：&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-md-4">
+									<span class="form-control-static" data-ng-bind="userMessage.trueName"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label">邮箱：&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-md-4">
+									<span class="form-control-static" data-ng-bind="userMessage.email"></span>
+								</div>
+							</div>
+							
+							<!-- --------------------------子类目数量------------------------ -->
+							<div class="form-group">
+								<label class="col-md-3 control-label">性别：&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-md-4">
+									<span class="form-control-static" data-ng-bind="userMessage.gender"></span>
+								</div>		
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label">手机：&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-md-4">
+									<span class="form-control-static" data-ng-bind="userMessage.mobileNo"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label">用户状态：&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-md-4">
+									<span class="form-control-static" data-ng-if="userMessage.state==0">停用</span>
+									<span class="form-control-static" data-ng-if="userMessage.state==1">启用</span>
+								</div>
+							</div>
+						  <!--   <div class="form-group">
+								<label class="col-md-3 control-label">城市名称：&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-md-4">
+									<p class="form-control-static" data-ng-bind="userMessage.orgName"></p>
+								</div>
+							</div> -->
+							<div class="form-group">
+								<label class="col-md-3 control-label">创建时间：&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-md-4">
+									<span class="form-control-static" data-ng-bind="userMessage.createTime"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label">用户最后登陆时间：&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-md-4">
+									<span class="form-control-static" data-ng-bind="userMessage.lastLoginTime"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label">用户所属城市：&nbsp;&nbsp;&nbsp;</label>
+								<div class="col-md-4 form-control-static" >
+									<span data-ng-bind-area="userMessage.city" ng-if="userMessage.city.province"></span>
+								</div>
+							</div>
+						</div>
+				</form>
+			</div>
+				<!-- END FORM-->
+			</div>
+		</div>
+	</div>
+</div>

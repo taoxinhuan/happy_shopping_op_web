@@ -1,0 +1,71 @@
+<div data-page-top></div>
+<div data-page-content>
+	<div class="col-md-6" style="height: 50px">
+		<div class="form-group">
+			<label class="col-md-3 control-label">菜单名称：</label>
+			<div class="col-md-8 form-contrl-static" ng-bind="vo.privilegeName"></div>
+		</div>
+	</div>
+	<div class="col-md-6" style="height: 50px">
+		<div class="form-group">
+			<label class="col-md-3 control-label">菜单路径：</label>
+			<div class="col-md-8" ng-bind="vo.url">
+			<input>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-12"
+		style="background-color: lightgray; height: 30px; font-size: 20px; color: white">子菜单列表</div>
+	<div class="col-md-12" style="height: 15px"></div>
+
+	<div class="table-toolbar">
+		<div class="btn-group">
+			<button  class="btn blue" ng-click="addSonMenu()">
+				<i class="fa fa-plus"></i> 新增子菜单
+			</button>
+		</div>
+	</div>
+	<div class="table-container">
+		<table
+			class="table table-striped table-bordered table-hover table-btns"
+			id="datatable_ajax" aria-describedby="datatable_products_info"
+			role="grid">
+			<thead>
+				<tr class="heading">
+					<th width="5%">序号</th>
+					<th>子菜单名称</th>
+					<th>子菜单链接</th>
+					<th>子菜单图标</th>
+					<th>子菜单排序号</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="odd gradeX" ng-repeat="item in vm.items">
+					<td ng-bind="$index+1"></td>
+					<td ng-bind="item.title"></td>
+					<td ng-bind="item.url"></td>
+					<td><i class="{{item.icon}}"></i></td>
+					<td ng-bind="item.sequence"></td>
+					<td> <button ng-click="editSonMenu(item)" class="btn btn-xs default btn-editable">
+                   	 	<i class="fa fa-file-text-o"></i> 编辑 </button>
+                   	 	<button class="btn btn-xs default btn-editable"  ng-click="deleteMenu(item.id)">
+                   	 	<i class="fa fa-trash"></i> 删除</button></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>
+<div class="form-actions">
+	<div class="row">
+		<div class="col-md-offset-5">
+	      	<div class="form-group">
+	            <a href="#/menuList.html" class="btn default">
+					<i class="fa fa-chevron-circle-left"></i> 返回
+	       	 	</a>
+	 		</div>
+	  </div>
+	</div>
+</div>

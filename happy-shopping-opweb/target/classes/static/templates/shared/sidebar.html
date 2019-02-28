@@ -1,0 +1,22 @@
+<div class="page-sidebar navbar-collapse collapse">
+	<ul class="page-sidebar-menu" data-keep-expanded="false"
+		data-auto-scroll="true" data-slide-speed="200"
+		ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
+		<li class="sidebar-toggler-wrapper">
+			<div class="sidebar-toggler"></div> 
+		</li>
+		<li>&nbsp;</li>
+		<!--start 使用自定义指令实现内部递归 -->
+		  <li ng-class="{'start':($index==0)}"  ng-repeat="item in sidebarList"  ng-if="item.privilegeType=='Menu'">
+		  <a href="{{item.url}}"> 
+		  <i class="{{item.icon}}"></i> 
+		  <span class="title" ng-bind="item.privilegeName"></span> 
+		  <span class="selected" ng-if="$index==0"></span><span ng-if="item.sonIndex.length" ng-class="{'arrow':(item.sonIndex!=null)}"></span>
+		  </a> 
+		  <trees sonlabel="item.sonIndex" ng-if="item.sonIndex.length"></trees> 
+		  </li>
+		<!-- end 使用自定义指令实现内部递归 -->
+		
+	</ul> 
+	<!-- END SIDEBAR MENU -->
+</div>

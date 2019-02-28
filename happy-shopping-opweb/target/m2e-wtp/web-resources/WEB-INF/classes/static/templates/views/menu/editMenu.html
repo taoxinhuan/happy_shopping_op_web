@@ -1,0 +1,69 @@
+.
+<div data-page-top></div>
+<div data-page-content  >
+	<div class="portlet-body form">
+		<form name="Form" class="form-horizontal searchbox"
+			novalidate="novalidate">
+			<div class="form-body">
+				<div class="form-group">
+					<label class="col-md-3 control-label"> 菜单名 ：<span class="required">* </span></label>
+					<div class="col-md-4">
+						<input type="text" class="form-control" placeholder="请输入菜单名" ng-model="vo.privilegeName" name="shopName" required />
+						<p class="help-block" ng-show="Form.shopName.$touched"
+							ng-messages="Form.shopName.$error" ng-messages-multiple>
+							<span class="error-messages ng-scope ng-active" ng-message="required">菜单名不能为空！</span>
+						</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label"> 菜单类别 ：<span class="required">* </span></label>
+					<div class="col-md-4">
+						<input type="text" class="form-control" ng-model="vo.privilegeType"  disabled required />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label"> 菜单图标 ：<span class="required">* </span></label>
+					<div class="col-md-4">
+						<input type="text" class="form-control" ng-model="vo.icon" name="icon"  required />
+						<p class="help-block" ng-show="Form.shopName.$touched"
+							ng-messages="Form.icon.$error" ng-messages-multiple>
+							<span class="error-messages ng-scope ng-active" ng-message="required">菜单图标不能为空！</span>
+						</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label"> 菜单路径 ：</label>
+					<div class="col-md-4">
+						<input type="text" class="form-control" ng-model="vo.url" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label"> 排序号 ：<span class="required">* </span></label>
+					<div class="col-md-4">
+						<input type="text" class="form-control" ng-model="vo.sequence" name="sequence"  required />
+						<p class="help-block" ng-show="Form.sequence.$touched"
+							ng-messages="Form.sequence.$error" ng-messages-multiple>
+							<span class="error-messages ng-scope ng-active" ng-message="required">排序号不能为空！</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="form-actions">
+		<div class="row">
+			<div class="col-md-offset-3 col-md-4">
+				<button type="button" class="btn btn-primary"
+						ng-click="saveInfo()" data-ng-disabled="Form.$invalid">
+					<i class="fa fa fa-check"></i> 保存
+				</button>
+				<a href="javascript:history.go(-1)" class="btn default">
+					<i class="fa fa-chevron-circle-left"></i> 返回
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+

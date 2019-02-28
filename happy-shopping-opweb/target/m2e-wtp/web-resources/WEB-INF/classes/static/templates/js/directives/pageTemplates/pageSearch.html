@@ -1,0 +1,15 @@
+<form onkeydown="if(event.keyCode==13){return false;}" class="form-horizontal data-ng-pristine data-ng-valid searchbox">
+	<div class="form-body">
+		<div class="row">
+			<div data-ng-transclude></div>
+		</div>
+	</div>
+	<div class="form-actions">
+		<div class="row">
+			<div class="col-md-12 col-md-offset-5">
+				<button type="button" class="btn btn-primary" data-ng-click="searchClick()"><i class="fa fa-search"></i> 查询</button>
+				<button class="btn primary" type="button" data-ng-click="resetClick()"><i class="fa fa-eraser"></i> 清空</button>
+			</div>
+		</div>
+	</div>
+</form>

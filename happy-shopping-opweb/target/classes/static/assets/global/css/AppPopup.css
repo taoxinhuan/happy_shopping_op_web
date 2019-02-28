@@ -1,0 +1,45 @@
+.popup-saveMasterplate {
+	margin-top:30px ;
+}
+
+.popup-img img {
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 250px;
+	height: 500px;
+}
+
+.popup-button {
+	margin: 0 auto;
+	margin-left: 80px;
+}
+
+#pop_div {
+	postion:relative ;
+}
+
+#pop_div  img {
+	width:150px ;
+	height:300px ;
+}
+
+#pop_div  .circle-blank {
+	position:absolute ;
+	width:20px ;
+	height:20px ;
+	border:1px solid #000 ;
+	background-color:#fff ;
+	top:330px ;
+	left:80px ;
+	border-radius:20px;
+}
+#pop_div .circle{
+	padding-left:3px ;
+	pading-top:1px;
+	color:red ;
+}
+
+.fontCss {
+	margin-top:30px ;
+}
